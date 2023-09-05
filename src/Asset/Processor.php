@@ -335,7 +335,7 @@ class Processor
         $action = $isUpdate ? 'Updating' : 'Installing';
         $name = $asset->name();
         $cmdName = $packageManager->name();
-        $this->io->writeComment("{$action} dependencies for '{$name}' using {$cmdName}...");
+        $this->io->writeComment("{$action} dependencies for '{$name}' using {$command}...");
 
         $command = $this->handleIsolatedCache(
             $packageManager,
