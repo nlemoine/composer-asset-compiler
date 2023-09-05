@@ -104,6 +104,10 @@ class Finder
             case file_exists("{$path}/npm-shrinkwrap.json"):
                 $manager = PackageManager::fromDefault(PackageManager::NPM);
                 break;
+            case file_exists("{$path}/.yarnrc.yaml"):
+            case file_exists("{$path}/.yarnrc.yml"):
+                $manager = PackageManager::fromDefault(PackageManager::YARN3);
+                break;
             case file_exists("{$path}/yarn.lock"):
                 $manager = PackageManager::fromDefault(PackageManager::YARN);
                 break;

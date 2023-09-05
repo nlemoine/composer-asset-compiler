@@ -18,6 +18,7 @@ use Inpsyde\AssetsCompiler\Util\Io;
 final class PackageManager
 {
     public const YARN = 'yarn';
+    public const YARN3 = 'yarn3';
     public const NPM = 'npm';
 
     private const DEPENDENCIES = 'dependencies';
@@ -32,6 +33,15 @@ final class PackageManager
         self::YARN => [
             self::DEPENDENCIES => [
                 self::DEPS_INSTALL => 'yarn',
+                self::DEPS_UPDATE => 'yarn upgrade',
+            ],
+            self::SCRIPT => 'yarn %s',
+            self::DISCOVER => 'yarn --version',
+            self::CLEAN_CACHE => 'yarn cache clean',
+        ],
+        self::YARN3 => [
+            self::DEPENDENCIES => [
+                self::DEPS_INSTALL => 'yarn --immutable',
                 self::DEPS_UPDATE => 'yarn upgrade',
             ],
             self::SCRIPT => 'yarn %s',
