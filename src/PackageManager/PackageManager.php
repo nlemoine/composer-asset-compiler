@@ -424,7 +424,7 @@ final class PackageManager
     private function maybeVerboseYarn(string $cmd, Io $io): string
     {
         if (!$io->isInteractive() && (stripos($cmd, '-interactive') === false)) {
-            $cmd .= ' --non-interactive';
+            // $cmd .= ' --non-interactive';
         }
 
         if ((stripos($cmd, '-verbose') !== false) || (stripos($cmd, '-silent') !== false)) {
