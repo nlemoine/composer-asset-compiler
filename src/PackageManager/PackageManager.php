@@ -435,7 +435,7 @@ final class PackageManager
             return "{$cmd} --silent";
         }
 
-        return $io->isVeryVeryVerbose() ? "{$cmd} --verbose" : $cmd;
+        return $cmd;
     }
 
     /**
